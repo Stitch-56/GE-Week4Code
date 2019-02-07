@@ -80,25 +80,31 @@ public class DoorController : MonoBehaviour {
         StartCoroutine ("moveDoor", false);
     }
 
-    private IEnumerator moveDoor(bool openDirection) {
-		if (openDirection == true) {
+    private IEnumerator moveDoor(bool openDirection)
+    {
+		if (openDirection == true)
+        {
 			// Ok we need to open the door
 
 			// Get the doors current y position
 			Vector2 currentPos = transform.position;
 
-			while (currentPos.y < openYPos) {
+			while (currentPos.y < openYPos)
+            {
 				currentPos.y += moveStep;
 				transform.position = currentPos;
 				yield return new WaitForSeconds (doorDelay);
 			}
-		} else {
+		} 
+else
+        {
 			// ok we are closing the door
 
 			// Get the doors current y position
 			Vector2 currentPos = transform.position;
 
-			while (currentPos.y > closedYPos) {
+			while (currentPos.y > closedYPos)
+            {
 				currentPos.y -= moveStep;
 				transform.position = currentPos;
 				yield return new WaitForSeconds (doorDelay);
